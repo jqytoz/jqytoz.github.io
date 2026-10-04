@@ -279,5 +279,4 @@ footer a { display: flex; gap: 5px; color: var(--color-accent); }
   html { scroll-behavior: auto; }
   .specimen img { animation: none; }
   .art-image { transition: none; }
-  }
 }
