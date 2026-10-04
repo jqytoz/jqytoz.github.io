@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowUpRight, CheckCircle2, FileCheck2, ShieldCheck } from "lucide-react";
 
-import itemArt from "../assets/winner.webp.asset.json";
+import itemArt from "../assets/maker-fedora-main.png.asset.json";
 import a01 from "../assets/maker-fedora-a01.jpg.asset.json";
 import a02 from "../assets/maker-fedora-a02.jpg.asset.json";
 import a03 from "../assets/maker-fedora-a03.jpg.asset.json";
