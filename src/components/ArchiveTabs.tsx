@@ -24,7 +24,7 @@ export const ITEM_TEMPLATE = {
   imageAlt: "The Maker Fedora, a steampunk fedora collectible item",
   status: "INDUSTRIAL",
   objectCode: "OBJECT MF · PRIVATE ARCHIVE",
-  communityUrl: "https://discord.gg/BMzQW37xcr",
+  communityUrl: "https://discord.gg/jND4SFryDD",
   communityLabel: "Join Discord",
   stats: [
     { label: "ROLIMONS VALUE", value: "150K" },
