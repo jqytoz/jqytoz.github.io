@@ -12,59 +12,59 @@ type Tab = "art" | "proofs" | "info";
 
 // Replace this one object to reuse the template for another collectible.
 export const ITEM_TEMPLATE = {
-  shortMark: "W1",
-  name: "W1NN3R",
+  shortMark: "MF",
+  name: "The Maker Fedora",
   eyebrow: "CURATED ARTIFACT DOSSIER · 2026",
-  headline: "The sovereign",
-  headlineAccent: "W1NN3R",
-  headlineEnd: "artifact.",
+  headline: "The best",
+  headlineAccent: "steampunk fedora",
+  headlineEnd: "on ROBLOX.",
   description:
-    "More than a limited. W1NN3R is a recognizable mark of conviction, scarcity, and collector wealth — documented through the art it inspires and the premiums it commands.",
+    "An icon of industrial sophistication. The Maker Fedora represents unmatched craft, high-tier rarity, and elite status — captured through exclusive visual archives and market heritage.",
   image: itemArt.url,
-  imageAlt: "W1NN3R Roblox item, a silver robot head with purple and green details",
-  status: "COVETED",
-  objectCode: "OBJECT W1 · PRIVATE ARCHIVE",
+  imageAlt: "The Maker Fedora, a steampunk fedora collectible item",
+  status: "INDUSTRIAL",
+  objectCode: "OBJECT MF · PRIVATE ARCHIVE",
   communityUrl: "https://discord.gg/BMzQW37xcr",
   communityLabel: "Join Discord",
   stats: [
-    { label: "ROLIMONS VALUE", value: "120K" },
-    { label: "LAST VALUE CHANGE", value: "+20K", accent: true },
-    { label: "LATEST OVERPAY", value: "70K" },
+    { label: "ROLIMONS VALUE", value: "150K" },
+    { label: "LAST VALUE CHANGE", value: "—", accent: true },
+    { label: "LATEST OVERPAY", value: "—" },
   ],
   art: [
     {
       code: "A–01",
-      title: "Napoleon Bonawinner",
-      description: "All we can do is win..",
+      title: "The Maker's Workshop",
+      description: "Where craft is forged — the fedora at home among the gears.",
       image: napoleon.url,
       featured: true,
     },
     {
       code: "A–02",
-      title: "Deal With the W1NN3R",
+      title: "Brass & Brimstone",
       description:
-        "The deal is settled before the table knows it. Poise, leverage, and the face of the winning side.",
+        "Copper, steam, and an unshakable silhouette. Industrial elegance, cut to profile.",
       image: deal.url,
     },
     {
       code: "A–03",
-      title: "After the Bell",
+      title: "After the Steam Clears",
       description:
-        "Victory, considered quietly. A private toast to conviction that outlasted the room.",
+        "The machines rest. The Maker Fedora remains — quietly commanding the room.",
       image: afterBell.url,
     },
     {
       code: "A–04",
-      title: "Persistence, Reflected",
+      title: "Craftsmanship, Reflected",
       description:
-        "The shadow fades. The W1NN3R remains — built one refusal to quit at a time.",
+        "Trends fade. Craft endures — built one detail at a time.",
       image: persistence.url,
     },
     {
       code: "A–05",
-      title: "Eternal Peace",
+      title: "The Eternal Forge",
       description:
-        "Beyond the market noise sits a rarer prize: the calm of knowing what you hold.",
+        "Beyond the market noise sits a rarer prize: the certainty of a true classic.",
       image: peace.url,
     },
   ],
@@ -129,14 +129,14 @@ export function ArchiveTabs() {
             <article className="proof-card">
               <FileCheck2 aria-hidden="true" />
               <p className="micro-label">LATEST VERIFIED TRADE</p>
-              <h3>70K overpay secured</h3>
+              <h3>Overpay secured</h3>
               <p>A concise record of the item, offer, date, and verification source belongs here.</p>
               <span>VERIFIED · ARCHIVE ENTRY P–01</span>
             </article>
             <article className="proof-card">
               <CheckCircle2 aria-hidden="true" />
               <p className="micro-label">VALUE RECORD</p>
-              <h3>120K current value</h3>
+              <h3>150K current value</h3>
               <p>Use this panel for the current valuation, recent movement, and supporting evidence.</p>
               <span>TRACKED · VALUE ENTRY V–01</span>
             </article>
