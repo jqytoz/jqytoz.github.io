@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUpRight, CheckCircle2, FileCheck2, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, BadgeCheck, FileCheck2, ShieldCheck } from "lucide-react";
 
 import itemArt from "../assets/maker-fedora-main.png.asset.json";
 import a01 from "../assets/maker-fedora-a01.jpg.asset.json";
@@ -7,6 +7,11 @@ import a02 from "../assets/maker-fedora-a02.jpg.asset.json";
 import a03 from "../assets/maker-fedora-a03.jpg.asset.json";
 import a04 from "../assets/maker-fedora-a04.jpg.asset.json";
 import a05 from "../assets/maker-fedora-a05.jpg.asset.json";
+import p01 from "../assets/maker-fedora-p01.jpg.asset.json";
+import p02 from "../assets/maker-fedora-p02.jpg.asset.json";
+import p03 from "../assets/maker-fedora-p03.jpg.asset.json";
+import p04 from "../assets/maker-fedora-p04.jpg.asset.json";
+import p05 from "../assets/maker-fedora-p05.jpg.asset.json";
 
 type Tab = "art" | "proofs" | "info";
 
@@ -69,6 +74,59 @@ export const ITEM_TEMPLATE = {
       image: a05.url,
     },
   ],
+  proofs: [
+    {
+      code: "P–01",
+      title: "Astraeus · 8-Bit Royal Crown · Dark Conjurer",
+      offer: "234,846 vs 150,000",
+      overpay: "85K OP",
+      sender: "kolvatn",
+      receiver: "3lockayBurn",
+      date: "28-09-26",
+      latest: true,
+      image: p01.url,
+    },
+    {
+      code: "P–02",
+      title: "Embrace vs Maker Fedora",
+      offer: "242,500 vs 150,000",
+      overpay: "92.5K OP",
+      sender: "FiveBarred",
+      receiver: "sociallynetworking",
+      date: "31/05/26",
+      image: p02.url,
+    },
+    {
+      code: "P–03",
+      title: "Aer Draco vs Maker Fedora",
+      offer: "199,034 vs 150,000",
+      overpay: "48K OP",
+      sender: "L1GHTLAZE",
+      receiver: "S0VSQUAD",
+      date: "5/6/26",
+      image: p03.url,
+    },
+    {
+      code: "P–04",
+      title: "Dark Conjurer vs Maker Fedora",
+      offer: "290,000 vs 208,000",
+      overpay: "82K OP",
+      sender: "SameWildCat",
+      receiver: "Irohsin",
+      date: "27/4/26",
+      image: p04.url,
+    },
+    {
+      code: "P–05",
+      title: "Maker Fedora vs Dark Conjurer",
+      offer: "186,500 vs 296,000",
+      overpay: "109.5K OP",
+      sender: "RB_Kraft",
+      receiver: "xJaytoz",
+      date: "25/04/26",
+      image: p05.url,
+    },
+  ],
 };
 
 const tabs: Array<{ id: Tab; label: string }> = [
@@ -127,20 +185,41 @@ export function ArchiveTabs() {
 
         {activeTab === "proofs" && (
           <div className="proof-grid" role="tabpanel">
-            <article className="proof-card">
+            <article className="proof-card proof-summary">
               <FileCheck2 aria-hidden="true" />
               <p className="micro-label">LATEST VERIFIED TRADE</p>
-              <h3>85K overpay secured</h3>
-              <p>A concise record of the item, offer, date, and verification source belongs here.</p>
-              <span>VERIFIED · ARCHIVE ENTRY P–01</span>
+              <h3>{ITEM_TEMPLATE.stats[2].value} overpay secured</h3>
+              <p>
+                {ITEM_TEMPLATE.proofs[0].title} — {ITEM_TEMPLATE.proofs[0].offer}. Sender{" "}
+                {ITEM_TEMPLATE.proofs[0].sender}, receiver {ITEM_TEMPLATE.proofs[0].receiver},{" "}
+                {ITEM_TEMPLATE.proofs[0].date}.
+              </p>
+              <span>VERIFIED · ARCHIVE ENTRY {ITEM_TEMPLATE.proofs[0].code}</span>
             </article>
-            <article className="proof-card">
-              <CheckCircle2 aria-hidden="true" />
-              <p className="micro-label">VALUE RECORD</p>
-              <h3>150K current value</h3>
-              <p>Use this panel for the current valuation, recent movement, and supporting evidence.</p>
-              <span>TRACKED · VALUE ENTRY V–01</span>
-            </article>
+            {ITEM_TEMPLATE.proofs.map((proof) => (
+              <article className={`proof-card proof-entry${proof.latest ? " latest" : ""}`} key={proof.code}>
+                <div className="proof-shot-wrap">
+                  <img src={proof.image} alt={`Trade receipt ${proof.code} — ${proof.title}`} className="proof-shot" loading="lazy" />
+                  <span className="exhibit-tag">EXHIBIT {proof.code}</span>
+                  {proof.latest && <span className="signature-tag">✧ LATEST OVERPAY</span>}
+                </div>
+                <div className="proof-meta">
+                  <span className="proof-code">{proof.code}</span>
+                  <div>
+                    <h3>{proof.title}</h3>
+                    <p className="proof-offer">
+                      {proof.offer} · <strong>{proof.overpay}</strong>
+                    </p>
+                    <p className="proof-parties">
+                      S: {proof.sender} · R: {proof.receiver} · D: {proof.date}
+                    </p>
+                  </div>
+                  <span className="proof-verified">
+                    <BadgeCheck size={13} aria-hidden="true" /> VERIFIED TRADE
+                  </span>
+                </div>
+              </article>
+            ))}
           </div>
         )}
 
