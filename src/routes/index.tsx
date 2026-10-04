@@ -6,15 +6,17 @@ import { ArchiveTabs, ITEM_TEMPLATE } from "../components/ArchiveTabs";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "W1NN3R Archive — Collectible Item Template" },
+      { title: "The Maker Fedora Archive — Collectible Item Dossier" },
       {
         name: "description",
-        content: "A reusable collector dossier template for showcasing an item, its art, trade proofs, and provenance.",
+        content:
+          "An icon of industrial sophistication — The Maker Fedora's art archive, market value, verified trades, and provenance.",
       },
-      { property: "og:title", content: "W1NN3R Archive — Collectible Item Template" },
+      { property: "og:title", content: "The Maker Fedora Archive — Collectible Item Dossier" },
       {
         property: "og:description",
-        content: "A reusable collector dossier for item art, valuation, verified trades, and provenance.",
+        content:
+          "The best steampunk fedora on ROBLOX — art archive, valuation, verified trades, and provenance.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
