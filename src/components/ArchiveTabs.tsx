@@ -2,11 +2,11 @@ import { useState } from "react";
 import { ArrowUpRight, CheckCircle2, FileCheck2, ShieldCheck } from "lucide-react";
 
 import itemArt from "../assets/winner.webp.asset.json";
-import napoleon from "../assets/napoleon-bonawinner.png.asset.json";
-import deal from "../assets/deal-with-the-winner.png.asset.json";
-import afterBell from "../assets/after-hours-winner.png.asset.json";
-import persistence from "../assets/persistence-portrait.png.asset.json";
-import peace from "../assets/eternal-peace.png.asset.json";
+import a01 from "../assets/maker-fedora-a01.jpg.asset.json";
+import a02 from "../assets/maker-fedora-a02.jpg.asset.json";
+import a03 from "../assets/maker-fedora-a03.jpg.asset.json";
+import a04 from "../assets/maker-fedora-a04.jpg.asset.json";
+import a05 from "../assets/maker-fedora-a05.jpg.asset.json";
 
 type Tab = "art" | "proofs" | "info";
 
@@ -28,44 +28,45 @@ export const ITEM_TEMPLATE = {
   communityLabel: "Join Discord",
   stats: [
     { label: "ROLIMONS VALUE", value: "150K" },
-    { label: "LAST VALUE CHANGE", value: "—", accent: true },
-    { label: "LATEST OVERPAY", value: "—" },
+    { label: "LAST VALUE CHANGE", value: "+65K", accent: true },
+    { label: "LATEST OVERPAY", value: "85K" },
   ],
   art: [
     {
       code: "A–01",
-      title: "The Maker's Workshop",
-      description: "Where craft is forged — the fedora at home among the gears.",
-      image: napoleon.url,
+      title: "The Industrial Monarch",
+      description:
+        "Precision engineered from the gears up. A custom-made crown for the discerning collector.",
+      image: a01.url,
       featured: true,
     },
     {
       code: "A–02",
-      title: "Brass & Brimstone",
+      title: "Clockwork Leverage",
       description:
-        "Copper, steam, and an unshakable silhouette. Industrial elegance, cut to profile.",
-      image: deal.url,
+        "The deal is settled before the table knows it. Poise, leverage, and total control defined by timeless design.",
+      image: a02.url,
     },
     {
       code: "A–03",
-      title: "After the Steam Clears",
+      title: "Steam & Shadows",
       description:
-        "The machines rest. The Maker Fedora remains — quietly commanding the room.",
-      image: afterBell.url,
+        "Victory, considered quietly. A private toast to conviction that outlasted the room. Calculated artistry.",
+      image: a03.url,
     },
     {
       code: "A–04",
-      title: "Craftsmanship, Reflected",
+      title: "Gears of Endurance",
       description:
-        "Trends fade. Craft endures — built one detail at a time.",
-      image: persistence.url,
+        "The shadow fades. True quality remains — built one refusal to quit at a time, resilient through every cycle.",
+      image: a04.url,
     },
     {
       code: "A–05",
-      title: "The Eternal Forge",
+      title: "Mechanical Harmony",
       description:
-        "Beyond the market noise sits a rarer prize: the certainty of a true classic.",
-      image: peace.url,
+        "Beyond the market noise sits a rarer prize: the calm of knowing what you hold. Mechanical mastery, pure certainty.",
+      image: a05.url,
     },
   ],
 };
@@ -129,7 +130,7 @@ export function ArchiveTabs() {
             <article className="proof-card">
               <FileCheck2 aria-hidden="true" />
               <p className="micro-label">LATEST VERIFIED TRADE</p>
-              <h3>Overpay secured</h3>
+              <h3>85K overpay secured</h3>
               <p>A concise record of the item, offer, date, and verification source belongs here.</p>
               <span>VERIFIED · ARCHIVE ENTRY P–01</span>
             </article>
