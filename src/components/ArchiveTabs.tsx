@@ -77,9 +77,9 @@ export const ITEM_TEMPLATE = {
   proofs: [
     {
       code: "P–01",
-      title: "Astraeus · 8-Bit Royal Crown · Dark Conjurer",
+      title: "Maker vs DCJ+",
       offer: "234,846 vs 150,000",
-      overpay: "85K OP",
+      overpay: "85K",
       sender: "kolvatn",
       receiver: "3lockayBurn",
       date: "28-09-26",
@@ -88,9 +88,9 @@ export const ITEM_TEMPLATE = {
     },
     {
       code: "P–02",
-      title: "Embrace vs Maker Fedora",
+      title: "Maker vs Embrace",
       offer: "242,500 vs 150,000",
-      overpay: "92.5K OP",
+      overpay: "92.5K",
       sender: "FiveBarred",
       receiver: "sociallynetworking",
       date: "31/05/26",
@@ -98,9 +98,9 @@ export const ITEM_TEMPLATE = {
     },
     {
       code: "P–03",
-      title: "Aer Draco vs Maker Fedora",
+      title: "Maker vs Aer Draco",
       offer: "199,034 vs 150,000",
-      overpay: "48K OP",
+      overpay: "48K",
       sender: "L1GHTLAZE",
       receiver: "S0VSQUAD",
       date: "5/6/26",
@@ -108,9 +108,9 @@ export const ITEM_TEMPLATE = {
     },
     {
       code: "P–04",
-      title: "Dark Conjurer vs Maker Fedora",
+      title: "Maker vs Dark Conjurer",
       offer: "290,000 vs 208,000",
-      overpay: "82K OP",
+      overpay: "82K",
       sender: "SameWildCat",
       receiver: "Irohsin",
       date: "27/4/26",
@@ -118,9 +118,9 @@ export const ITEM_TEMPLATE = {
     },
     {
       code: "P–05",
-      title: "Maker Fedora vs Dark Conjurer",
+      title: "Maker vs Dark Conjurer",
       offer: "186,500 vs 296,000",
-      overpay: "109.5K OP",
+      overpay: "109.5K",
       sender: "RB_Kraft",
       receiver: "xJaytoz",
       date: "25/04/26",
@@ -190,9 +190,9 @@ export function ArchiveTabs() {
               <p className="micro-label">LATEST VERIFIED TRADE</p>
               <h3>{ITEM_TEMPLATE.stats[2].value} overpay secured</h3>
               <p>
-                {ITEM_TEMPLATE.proofs[0].title} — {ITEM_TEMPLATE.proofs[0].offer}. Sender{" "}
-                {ITEM_TEMPLATE.proofs[0].sender}, receiver {ITEM_TEMPLATE.proofs[0].receiver},{" "}
-                {ITEM_TEMPLATE.proofs[0].date}.
+                {ITEM_TEMPLATE.proofs[0].title} — {ITEM_TEMPLATE.proofs[0].overpay} overpay. Offer{" "}
+                {ITEM_TEMPLATE.proofs[0].offer}. Sender {ITEM_TEMPLATE.proofs[0].sender}, receiver{" "}
+                {ITEM_TEMPLATE.proofs[0].receiver}, {ITEM_TEMPLATE.proofs[0].date}.
               </p>
               <span>VERIFIED · ARCHIVE ENTRY {ITEM_TEMPLATE.proofs[0].code}</span>
             </article>
@@ -206,10 +206,11 @@ export function ArchiveTabs() {
                 <div className="proof-meta">
                   <span className="proof-code">{proof.code}</span>
                   <div>
-                    <h3>{proof.title}</h3>
-                    <p className="proof-offer">
-                      {proof.offer} · <strong>{proof.overpay}</strong>
-                    </p>
+                    <h3>
+                      {proof.title}
+                      <span className="proof-overpay"> — {proof.overpay} overpay</span>
+                    </h3>
+                    <p className="proof-offer">{proof.offer}</p>
                     <p className="proof-parties">
                       S: {proof.sender} · R: {proof.receiver} · D: {proof.date}
                     </p>
