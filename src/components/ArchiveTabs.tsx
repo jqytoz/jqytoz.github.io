@@ -77,7 +77,7 @@ export const ITEM_TEMPLATE = {
   proofs: [
     {
       code: "P–01",
-      title: "Maker vs Astraeus",
+      title: "Maker vs DCJ+",
       offer: "234,846 vs 150,000",
       overpay: "85K",
       sender: "kolvatn",
