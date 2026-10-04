@@ -190,9 +190,9 @@ export function ArchiveTabs() {
               <p className="micro-label">LATEST VERIFIED TRADE</p>
               <h3>{ITEM_TEMPLATE.stats[2].value} overpay secured</h3>
               <p>
-                {ITEM_TEMPLATE.proofs[0].title} — {ITEM_TEMPLATE.proofs[0].offer}. Sender{" "}
-                {ITEM_TEMPLATE.proofs[0].sender}, receiver {ITEM_TEMPLATE.proofs[0].receiver},{" "}
-                {ITEM_TEMPLATE.proofs[0].date}.
+                {ITEM_TEMPLATE.proofs[0].title} — {ITEM_TEMPLATE.proofs[0].overpay} overpay. Offer{" "}
+                {ITEM_TEMPLATE.proofs[0].offer}. Sender {ITEM_TEMPLATE.proofs[0].sender}, receiver{" "}
+                {ITEM_TEMPLATE.proofs[0].receiver}, {ITEM_TEMPLATE.proofs[0].date}.
               </p>
               <span>VERIFIED · ARCHIVE ENTRY {ITEM_TEMPLATE.proofs[0].code}</span>
             </article>
@@ -206,10 +206,11 @@ export function ArchiveTabs() {
                 <div className="proof-meta">
                   <span className="proof-code">{proof.code}</span>
                   <div>
-                    <h3>{proof.title}</h3>
-                    <p className="proof-offer">
-                      {proof.offer} · <strong>{proof.overpay}</strong>
-                    </p>
+                    <h3>
+                      {proof.title}
+                      <span className="proof-overpay"> — {proof.overpay} overpay</span>
+                    </h3>
+                    <p className="proof-offer">{proof.offer}</p>
                     <p className="proof-parties">
                       S: {proof.sender} · R: {proof.receiver} · D: {proof.date}
                     </p>
