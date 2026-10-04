@@ -188,13 +188,13 @@ export function ArchiveTabs() {
             <article className="proof-card proof-summary">
               <FileCheck2 aria-hidden="true" />
               <p className="micro-label">LATEST VERIFIED TRADE</p>
-              <h3>{ITEM_TEMPLATE.stats[2].value} overpay secured</h3>
+              <h3>{ITEM_TEMPLATE.stats[2]?.value} overpay secured</h3>
               <p>
-                {ITEM_TEMPLATE.proofs[0].title} — {ITEM_TEMPLATE.proofs[0].overpay} overpay. Offer{" "}
-                {ITEM_TEMPLATE.proofs[0].offer}. Sender {ITEM_TEMPLATE.proofs[0].sender}, receiver{" "}
-                {ITEM_TEMPLATE.proofs[0].receiver}, {ITEM_TEMPLATE.proofs[0].date}.
+                {ITEM_TEMPLATE.proofs[0]?.title} — {ITEM_TEMPLATE.proofs[0]?.overpay} overpay. Offer{" "}
+                {ITEM_TEMPLATE.proofs[0]?.offer}. Sender {ITEM_TEMPLATE.proofs[0]?.sender}, receiver{" "}
+                {ITEM_TEMPLATE.proofs[0]?.receiver}, {ITEM_TEMPLATE.proofs[0]?.date}.
               </p>
-              <span>VERIFIED · ARCHIVE ENTRY {ITEM_TEMPLATE.proofs[0].code}</span>
+              <span>VERIFIED · ARCHIVE ENTRY {ITEM_TEMPLATE.proofs[0]?.code}</span>
             </article>
             {ITEM_TEMPLATE.proofs.map((proof) => (
               <article className={`proof-card proof-entry${proof.latest ? " latest" : ""}`} key={proof.code}>
