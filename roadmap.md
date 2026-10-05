@@ -8,3 +8,4 @@
 - [x] Add five uploaded trade receipts as Proofs (Overpays) gallery P–01…P–05
 
 - [x] Added P–06…P–08 receipts and Average Overpay 80K stat
+- [x] Restyle proof entries with prominent overpay and trade detail panels
