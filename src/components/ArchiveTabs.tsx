@@ -238,20 +238,31 @@ export function ArchiveTabs() {
                   {proof.latest && <span className="signature-tag">✧ LATEST OVERPAY</span>}
                 </div>
                 <div className="proof-meta">
-                  <span className="proof-code">{proof.code}</span>
-                  <div>
-                    <h3>
-                      {proof.title}
-                      <span className="proof-overpay"> — {proof.overpay} overpay</span>
-                    </h3>
-                    <p className="proof-offer">{proof.offer}</p>
-                    <p className="proof-parties">
-                      S: {proof.sender} · R: {proof.receiver} · D: {proof.date}
-                    </p>
+                  <div className="proof-value">
+                    <span>OVERPAY</span>
+                    <strong>+{proof.overpay}</strong>
                   </div>
-                  <span className="proof-verified">
-                    <BadgeCheck size={13} aria-hidden="true" /> VERIFIED TRADE
-                  </span>
+                  <div className="proof-details">
+                    <time>{proof.date}</time>
+                    <h3>{proof.title}</h3>
+                    <dl>
+                      <div>
+                        <dt>ITEMS</dt>
+                        <dd>{proof.offer}</dd>
+                      </div>
+                      <div>
+                        <dt>SENDER</dt>
+                        <dd>{proof.sender}</dd>
+                      </div>
+                      <div>
+                        <dt>RECEIVER</dt>
+                        <dd>{proof.receiver}</dd>
+                      </div>
+                    </dl>
+                    <span className="proof-verified">
+                      <BadgeCheck size={13} aria-hidden="true" /> VERIFIED TRADE {proof.code}
+                    </span>
+                  </div>
                 </div>
               </article>
             ))}
