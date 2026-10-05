@@ -194,8 +194,8 @@
 .hero h1 { margin: 22px 0 20px; font-family: var(--font-display); font-weight: 400; font-size: clamp(50px, 5.3vw, 78px); line-height: .93; max-width: 750px; }
 .hero h1 em { color: var(--color-accent); font-weight: 400; }
 .hero-description { max-width: 630px; color: var(--color-muted-foreground); line-height: 1.65; font-size: 14px; }
-.stats { display: flex; margin: 30px 0 0; padding-top: 20px; border-top: 1px solid var(--color-border); max-width: 690px; }
-.stats div { min-width: 150px; padding-right: 42px; margin-right: 32px; border-right: 1px solid var(--color-border); }
+.stats { display: flex; flex-wrap: wrap; row-gap: 18px; margin: 30px 0 0; padding-top: 20px; border-top: 1px solid var(--color-border); max-width: 690px; }
+.stats div { min-width: 120px; padding-right: 24px; margin-right: 20px; border-right: 1px solid var(--color-border); }
 .stats div:last-child { border: 0; margin: 0; }
 .stats dt, .micro-label { font-family: var(--font-mono); font-size: 8px; color: var(--color-muted-foreground); }
 .stats dd { margin: 7px 0 0; font-family: var(--font-display); font-size: 28px; }

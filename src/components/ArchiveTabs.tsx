@@ -12,6 +12,9 @@ import p02 from "../assets/maker-fedora-p02.jpg.asset.json";
 import p03 from "../assets/maker-fedora-p03.jpg.asset.json";
 import p04 from "../assets/maker-fedora-p04.jpg.asset.json";
 import p05 from "../assets/maker-fedora-p05.jpg.asset.json";
+import p06 from "../assets/maker-fedora-p06.jpg.asset.json";
+import p07 from "../assets/maker-fedora-p07.jpg.asset.json";
+import p08 from "../assets/maker-fedora-p08.jpg.asset.json";
 
 type Tab = "art" | "proofs" | "info";
 
@@ -35,6 +38,7 @@ export const ITEM_TEMPLATE = {
     { label: "ROLIMONS VALUE", value: "150K" },
     { label: "LAST VALUE CHANGE", value: "+65K", accent: true },
     { label: "LATEST OVERPAY", value: "85K" },
+    { label: "AVERAGE OVERPAY", value: "80K" },
   ],
   art: [
     {
@@ -125,6 +129,36 @@ export const ITEM_TEMPLATE = {
       receiver: "xJaytoz",
       date: "25/04/26",
       image: p05.url,
+    },
+    {
+      code: "P–06",
+      title: "Maker vs SSHF and 2x Supas",
+      offer: "153,300 vs 255,000",
+      overpay: "101.7K",
+      sender: "Forrealmistake",
+      receiver: "EldestClient565",
+      date: "4/11/26",
+      image: p06.url,
+    },
+    {
+      code: "P–07",
+      title: "Maker vs SSHF",
+      offer: "152,207 vs 243,000",
+      overpay: "90K",
+      sender: "irohshin",
+      receiver: "LTlago",
+      date: "22/2/2026",
+      image: p07.url,
+    },
+    {
+      code: "P–08",
+      title: "Maker vs BCWHP",
+      offer: "150,000 vs 240,000",
+      overpay: "90K",
+      sender: "LocustSwarm",
+      receiver: "ephyte",
+      date: "4/7/2026",
+      image: p08.url,
     },
   ],
 };
