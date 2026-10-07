@@ -36,7 +36,7 @@ export const ITEM_TEMPLATE = {
   communityLabel: "Join Discord",
   vault: {
     title: "The Maker Fedora Circulation List and FT status",
-    updated: "Last updated June 1st 2026.",
+    updated: "Last updated 7th October 2026.",
     scope: "Active copies (past 6 months)",
     credit: "Made with love by Jaytozz, updated by himself",
     stats: [

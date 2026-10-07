@@ -10,3 +10,4 @@
 - [x] Added P–06…P–08 receipts and Average Overpay 80K stat
 - [x] Restyle proof entries with prominent overpay and trade detail panels
 - [x] Add supplied circulation list, FT statuses, ownership dates, and credits to Info Vault
+- [ ] Correct Info Vault last-updated date to 7th October 2026
