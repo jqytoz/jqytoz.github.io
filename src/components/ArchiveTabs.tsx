@@ -69,12 +69,12 @@ export const ITEM_TEMPLATE = {
           { user: "EldestClient565", handle: "@eldestclient565", status: "SEMI AND DEMAND", uaid: "1365666600", since: "12th April 2026", out: false },
           { user: "ephyte", handle: "@ephyte", status: "DEMAND ONLY", uaid: "1365666599", since: "7th April 2026", out: true },
           { user: "1clone09", handle: "@clone2475", status: "DEMAND ONLY", uaid: "1527061056", since: "7th August 2025", out: true },
+          { user: "FiveBarred", handle: "@fivebarred", status: "DEMAND ONLY", uaid: "1527060978", since: "31st June 2026", out: false },
         ],
       },
       {
         title: "Not for trade",
         owners: [
-          { user: "FiveBarred", handle: "@fivebarred", status: "DEMAND ONLY", uaid: "1527060978", since: "31st June 2026", out: false },
           { user: "xJaytoz", handle: "@jqytoz", status: "DEMAND ONLY", uaid: "1365666633", since: "3rd May 2026", out: false },
         ],
       },
