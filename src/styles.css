@@ -290,9 +290,9 @@ footer a { display: flex; gap: 5px; color: var(--color-accent); }
   .art-grid { grid-template-columns: 1fr; gap: 34px; }
   .art-image-wrap { aspect-ratio: 1.15; }
   .proof-grid { grid-template-columns: 1fr; }
-  .proof-meta { grid-template-columns: 92px minmax(0, 1fr); padding: 24px 18px; }
+  .proof-meta { grid-template-columns: 108px minmax(0, 1fr); padding: 24px 18px; }
   .proof-value { padding-right: 16px; }
-  .proof-value strong { margin-top: 14px; font-size: 28px; }
+  .proof-value strong { margin-top: 12px; font-size: 21px; }
   .proof-details { padding-left: 18px; }
   .proof-details time { position: static; display: block; margin-bottom: 9px; }
   .proof-meta h3 { margin: 0 0 18px; font-size: 21px; }
