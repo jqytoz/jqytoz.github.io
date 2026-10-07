@@ -238,10 +238,10 @@
 .proof-shot-wrap { position: relative; border: 1px solid var(--color-border); background: color-mix(in srgb, var(--color-card) 60%, transparent); }
 .proof-shot { display: block; width: 100%; height: auto; }
 .proof-entry.latest .proof-shot-wrap { border-color: var(--color-accent); }
-.proof-meta { display: grid; grid-template-columns: minmax(120px, .7fr) minmax(0, 2fr); padding: 32px; }
+.proof-meta { display: grid; grid-template-columns: minmax(140px, .8fr) minmax(0, 2fr); padding: 32px; }
 .proof-value { padding: 8px 26px 8px 0; border-right: 1px solid var(--color-border); }
 .proof-value span { border: 0; margin: 0; padding: 0; color: var(--color-muted-foreground); }
-.proof-value strong { display: block; margin-top: 18px; color: var(--color-accent); font-family: var(--font-display); font-size: 42px; font-weight: 400; white-space: nowrap; }
+.proof-value strong { display: block; margin-top: 14px; color: var(--color-accent); font-family: var(--font-display); font-size: 30px; font-weight: 400; white-space: nowrap; }
 .proof-details { position: relative; min-width: 0; padding-left: 32px; }
 .proof-details time { position: absolute; top: 4px; right: 0; font-family: var(--font-mono); font-size: 9px; color: var(--color-muted-foreground); }
 .proof-meta h3 { margin: 0 100px 22px 0; font-family: var(--font-display); font-size: 25px; line-height: 1.15; font-weight: 400; }
