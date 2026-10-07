@@ -34,6 +34,47 @@ export const ITEM_TEMPLATE = {
   objectCode: "OBJECT MF · PRIVATE ARCHIVE",
   communityUrl: "https://discord.gg/jND4SFryDD",
   communityLabel: "Join Discord",
+  vault: {
+    title: "The Maker Fedora Circulation List and FT status",
+    updated: "Last updated 7th October 2026.",
+    scope: "Active copies (past 6 months)",
+    credit: "Made with love by Jaytozz, updated by himself",
+    stats: [
+      { label: "TOTAL IN CIRCULATION", value: "25" },
+      { label: "ACTIVELY IN CIRCULATION", value: "8" },
+      { label: "OUT OF CIRCULATION", value: "4" },
+      { label: "AVAILABLE FOR TRADE", value: "6" },
+    ],
+    note: "14x maker copies marked NFT. Now owned by @conspiratorial",
+    groups: [
+      {
+        title: "For trade",
+        owners: [
+          { user: "k4xie", handle: "@4wulf", status: "DEMAND ONLY", uaid: "1528626180", since: "5th August 2026", out: false },
+          { user: "Gloca1", handle: "@gloca1.", status: "DEMAND ONLY", uaid: "1383025924", since: "24th May 2026", out: false },
+          { user: "Kolvatn", handle: "@kolvatn", status: "DEMAND ONLY", uaid: "1528626180", since: "28th September 2026", out: false },
+          { user: "CLaiReea1", handle: "@claireea", status: "SEMI AND DEMAND", uaid: "1365666629", since: "14th April 2026", out: false },
+          { user: "EldestClient565", handle: "@eldestclient565", status: "SEMI AND DEMAND", uaid: "1365666600", since: "12th April 2026", out: false },
+          { user: "ephyte", handle: "@ephyte", status: "DEMAND ONLY", uaid: "1365666599", since: "7th April 2026", out: true },
+          { user: "1clone09", handle: "@clone2475", status: "DEMAND ONLY", uaid: "1527061056", since: "7th August 2025", out: true },
+        ],
+      },
+      {
+        title: "Not for trade",
+        owners: [
+          { user: "FiveBarred", handle: "@fivebarred", status: "DEMAND ONLY", uaid: "1527060978", since: "31st June 2026", out: false },
+          { user: "xJaytoz", handle: "@jqytoz", status: "DEMAND ONLY", uaid: "1365666633", since: "3rd May 2026", out: false },
+        ],
+      },
+      {
+        title: "Out of circulation (NFT)",
+        owners: [
+          { user: "Speluffy", handle: "@speluffy", status: "NFT", uaid: "1465807687", since: "3rd May 2025", out: true },
+          { user: "ixplrr", handle: "@ixplrr", status: "NFT", uaid: "1529104191", since: "22nd April 2025", out: true },
+        ],
+      },
+    ],
+  },
   stats: [
     { label: "ROLIMONS VALUE", value: "150K" },
     { label: "LAST VALUE CHANGE", value: "+65K", accent: true },
@@ -270,19 +311,44 @@ export function ArchiveTabs() {
         )}
 
         {activeTab === "info" && (
-          <div className="vault-panel" role="tabpanel">
-            <ShieldCheck aria-hidden="true" />
-            <div>
-              <p className="micro-label">COLLECTOR INFORMATION</p>
-              <h3>A documented object of distinction.</h3>
-              <p>
-                Add the item’s release history, serial details, ownership notes, market links, and provenance here.
-                This area is designed to become the permanent reference page for any collectible.
-              </p>
+          <div className="circulation-vault" role="tabpanel">
+            <div className="circulation-heading">
+              <ShieldCheck aria-hidden="true" />
+              <div>
+                <h3>{ITEM_TEMPLATE.vault.title}</h3>
+                <p>{ITEM_TEMPLATE.vault.updated} · {ITEM_TEMPLATE.vault.scope}</p>
+                <p>{ITEM_TEMPLATE.vault.credit}</p>
+              </div>
             </div>
-            <a href={ITEM_TEMPLATE.communityUrl} target="_blank" rel="noreferrer">
-              Community <ArrowUpRight size={15} aria-hidden="true" />
-            </a>
+            <dl className="circulation-stats">
+              {ITEM_TEMPLATE.vault.stats.map((stat) => (
+                <div key={stat.label}><dt>{stat.label}</dt><dd>{stat.value}</dd></div>
+              ))}
+            </dl>
+            {ITEM_TEMPLATE.vault.groups.map((group) => (
+              <section className="circulation-group" key={group.title} aria-label={group.title}>
+                <h4>{group.title} <span>{group.owners.length.toString().padStart(2, "0")}</span></h4>
+                <div className="circulation-table-wrap">
+                  <table className="circulation-table">
+                    <thead><tr><th scope="col">User</th><th scope="col">Trade Status / Overpay</th><th scope="col">UAID</th><th scope="col">Owned Since</th></tr></thead>
+                    <tbody>
+                      {group.owners.map((owner) => (
+                        <tr key={`${owner.user}-${owner.uaid}`}>
+                          <td><strong>{owner.user}</strong><span className="owner-handle">{owner.handle}</span></td>
+                          <td><span className="owner-status">{owner.status}</span>{owner.out && <span className="owner-out">OUT OF CIRCULATION</span>}</td>
+                          <td className="owner-uaid">{owner.uaid}</td>
+                          <td>{owner.since}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            ))}
+            <div className="circulation-note">
+              <p>{ITEM_TEMPLATE.vault.note}</p>
+              <a href={ITEM_TEMPLATE.communityUrl} target="_blank" rel="noreferrer">Community <ArrowUpRight size={15} aria-hidden="true" /></a>
+            </div>
           </div>
         )}
       </section>
