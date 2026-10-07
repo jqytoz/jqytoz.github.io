@@ -18,6 +18,18 @@ import p08 from "../assets/maker-fedora-p08.jpg.asset.json";
 
 type Tab = "art" | "proofs" | "info";
 
+const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
+// Turns "28th September 2026" into a comparable number so rows order oldest owned first.
+function ownedKey(since: string): number {
+  const parts = since.match(/(\d{1,2})(?:st|nd|rd|th)?\s+([A-Za-z]+)\s+(\d{4})/);
+  if (!parts) return Number.MAX_SAFE_INTEGER;
+  const day = Number(parts[1] ?? "0");
+  const month = MONTHS.indexOf((parts[2] ?? "").toLowerCase()) + 1;
+  const year = Number(parts[3] ?? "0");
+  return year * 372 + month * 31 + day;
+}
+
 // Replace this one object to reuse the template for another collectible.
 export const ITEM_TEMPLATE = {
   shortMark: "MF",
@@ -332,7 +344,9 @@ export function ArchiveTabs() {
                   <table className="circulation-table">
                     <thead><tr><th scope="col">User</th><th scope="col">Trade Status / Overpay</th><th scope="col">UAID</th><th scope="col">Owned Since</th></tr></thead>
                     <tbody>
-                      {group.owners.map((owner) => (
+                      {[...group.owners]
+                        .sort((a, b) => ownedKey(a.since) - ownedKey(b.since))
+                        .map((owner) => (
                         <tr key={`${owner.user}-${owner.uaid}`}>
                           <td><strong>{owner.user}</strong><span className="owner-handle">{owner.handle}</span></td>
                           <td><span className="owner-status">{owner.status}</span>{owner.out && <span className="owner-out">OUT OF CIRCULATION</span>}</td>
