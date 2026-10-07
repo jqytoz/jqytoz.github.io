@@ -11,4 +11,4 @@
 - [x] Restyle proof entries with prominent overpay and trade detail panels
 - [x] Add supplied circulation list, FT statuses, ownership dates, and credits to Info Vault
 - [x] Correct Info Vault last-updated date to 7th October 2026
-- [x] Order Info Vault rows earliest owned to latest
+- [x] Order Info Vault rows latest owned first; FiveBarred moved to For trade, xJaytoz sole Not-for-trade owner
