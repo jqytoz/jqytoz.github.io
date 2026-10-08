@@ -218,8 +218,8 @@
 .art-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 38px 20px; padding-top: 30px; }
 .art-entry { min-width: 0; }
 .art-image-wrap { aspect-ratio: 1.33; position: relative; overflow: hidden; border: 1px solid var(--color-border); background: var(--color-card); }
-.art-image { width: 100%; height: 100%; object-fit: cover; filter: saturate(.82); transition: transform 600ms ease, filter 300ms ease; }
-.art-entry:hover .art-image { transform: scale(1.025); filter: saturate(1); }
+.art-image { width: 100%; height: 100%; object-fit: cover; transition: transform 600ms ease; }
+.art-entry:hover .art-image { transform: scale(1.025); }
 .exhibit-tag, .signature-tag { position: absolute; top: 14px; z-index: 2; padding: 6px 9px; border: 1px solid var(--color-border); background: color-mix(in oklch, var(--color-background) 88%, transparent); font-family: var(--font-mono); font-size: 7px; }
 .exhibit-tag { left: 14px; }
 .signature-tag { right: 14px; background: color-mix(in oklch, var(--color-primary) 85%, transparent); color: var(--color-primary-foreground); }
@@ -337,8 +337,20 @@ footer a { display: flex; gap: 5px; color: var(--color-accent); }
   footer { min-height: 120px; gap: 24px; }
 }
 
+.entrance-screen { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px; background: var(--color-background); color: var(--color-foreground); transition: opacity 450ms ease, visibility 450ms ease; }
+.entrance-leaving { opacity: 0; visibility: hidden; pointer-events: none; }
+.entrance-mark { display: grid; place-items: center; width: 84px; height: 84px; border: 1px solid var(--color-accent); color: var(--color-accent); font-family: var(--font-display); font-size: 32px; }
+.entrance-screen strong { font-family: var(--font-display); font-weight: 400; font-size: 24px; }
+.entrance-line { width: 120px; height: 2px; background: var(--color-border); overflow: hidden; }
+.entrance-line::after { content: ""; display: block; width: 50%; height: 100%; background: var(--color-accent); animation: entrance-progress 900ms ease-in-out infinite alternate; }
+.scroll-reveal { opacity: 0; transform: translateY(26px); transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.7,.2,1); }
+.scroll-visible { opacity: 1; transform: translateY(0); }
+@keyframes entrance-progress { from { transform: translateX(-100%); } to { transform: translateX(200%); } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .specimen img { animation: none; }
   .art-image { transition: none; }
+  .entrance-screen { display: none; }
+  .scroll-reveal { opacity: 1; transform: none; transition: none; }
 }

@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 
 import { ArchiveTabs, ITEM_TEMPLATE } from "../components/ArchiveTabs";
+import { PageEntrance } from "../components/PageEntrance";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -27,6 +28,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
+    <PageEntrance name={ITEM_TEMPLATE.name} mark={ITEM_TEMPLATE.shortMark}>
     <div className="site-shell">
       <header className="topbar">
         <a className="brand" href="#top" aria-label={`${ITEM_TEMPLATE.name} archive home`}>
@@ -87,5 +89,6 @@ function Index() {
         </a>
       </footer>
     </div>
+    </PageEntrance>
   );
 }
