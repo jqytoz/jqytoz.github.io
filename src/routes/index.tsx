@@ -28,7 +28,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <PageEntrance name={ITEM_TEMPLATE.name} mark={ITEM_TEMPLATE.shortMark}>
+    <PageEntrance name={ITEM_TEMPLATE.name} mark={ITEM_TEMPLATE.shortMark} image={ITEM_TEMPLATE.image}>
     <div className="site-shell">
       <header className="topbar">
         <a className="brand" href="#top" aria-label={`${ITEM_TEMPLATE.name} archive home`}>
