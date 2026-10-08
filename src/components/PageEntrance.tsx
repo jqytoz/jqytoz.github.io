@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-export function PageEntrance({ name, mark, children }: { name: string; mark: string; children: ReactNode }) {
+export function PageEntrance({ name, mark, image, children }: { name: string; mark: string; image?: string; children: ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
   const [phase, setPhase] = useState<"loading" | "leaving" | "ready">("loading");
 
@@ -66,8 +66,8 @@ export function PageEntrance({ name, mark, children }: { name: string; mark: str
     <div ref={root}>
       {phase !== "ready" && (
         <div className={`entrance-screen${phase === "leaving" ? " entrance-leaving" : ""}`} role="status" aria-label={`Loading ${name}`}>
-          <span className="entrance-mark">{mark}</span>
-          <strong>{name}</strong>
+          {image ? <img className="entrance-emblem" src={image} alt="" aria-hidden="true" /> : <span className="entrance-mark">{mark}</span>}
+          <strong className="entrance-title">{name}</strong>
           <span className="entrance-line" aria-hidden="true" />
         </div>
       )}

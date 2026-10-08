@@ -337,12 +337,15 @@ footer a { display: flex; gap: 5px; color: var(--color-accent); }
   footer { min-height: 120px; gap: 24px; }
 }
 
-.entrance-screen { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 24px; background: var(--color-background); color: var(--color-foreground); transition: opacity 450ms ease, visibility 450ms ease; }
+.entrance-screen { position: fixed; inset: 0; z-index: 100; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 28px; background: var(--color-background); color: var(--color-foreground); transition: opacity 450ms ease, visibility 450ms ease; }
 .entrance-leaving { opacity: 0; visibility: hidden; pointer-events: none; }
 .entrance-mark { display: grid; place-items: center; width: 84px; height: 84px; border: 1px solid var(--color-accent); color: var(--color-accent); font-family: var(--font-display); font-size: 32px; }
-.entrance-screen strong { font-family: var(--font-display); font-weight: 400; font-size: 24px; }
+.entrance-emblem { width: 118px; height: 118px; object-fit: contain; filter: drop-shadow(0 18px 42px rgba(94, 148, 86, 0.35)); animation: entrance-spin 2.4s linear infinite; }
+@keyframes entrance-spin { to { transform: rotate(360deg); } }
+.entrance-title { font-family: var(--font-sans); font-weight: 600; font-size: clamp(21px, 4.2vw, 30px); letter-spacing: 0.26em; text-transform: uppercase; background: linear-gradient(96deg, #d9e8d0 0%, #9dc48f 42%, #5e9454 78%, #d9e8d0 100%); background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: entrance-shimmer 2.8s ease-in-out infinite alternate; }
+@keyframes entrance-shimmer { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
 .entrance-line { width: 120px; height: 2px; background: var(--color-border); overflow: hidden; }
-.entrance-line::after { content: ""; display: block; width: 50%; height: 100%; background: var(--color-accent); animation: entrance-progress 900ms ease-in-out infinite alternate; }
+.entrance-line::after { content: ""; display: block; width: 50%; height: 100%; background: linear-gradient(90deg, #5e9454, #b9d8ae); animation: entrance-progress 900ms ease-in-out infinite alternate; }
 .scroll-reveal { opacity: 0; transform: translateY(26px); transition: opacity 700ms ease, transform 700ms cubic-bezier(.2,.7,.2,1); }
 .scroll-visible { opacity: 1; transform: translateY(0); }
 @keyframes entrance-progress { from { transform: translateX(-100%); } to { transform: translateX(200%); } }
