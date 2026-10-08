@@ -2,11 +2,11 @@ import { useState } from "react";
 import { ArrowUpRight, BadgeCheck, FileCheck2, ShieldCheck } from "lucide-react";
 
 import itemArt from "../assets/maker-fedora-main.png.asset.json";
-import a01 from "../assets/maker-fedora-a01.jpg.asset.json";
-import a02 from "../assets/maker-fedora-a02.jpg.asset.json";
-import a03 from "../assets/maker-fedora-a03.jpg.asset.json";
-import a04 from "../assets/maker-fedora-a04.jpg.asset.json";
-import a05 from "../assets/maker-fedora-a05.jpg.asset.json";
+import a01 from "../assets/maker-fedora-a01-hq.webp.asset.json";
+import a02 from "../assets/maker-fedora-a02-hq.webp.asset.json";
+import a03 from "../assets/maker-fedora-a03-hq.webp.asset.json";
+import a04 from "../assets/maker-fedora-a04-hq.webp.asset.json";
+import a05 from "../assets/maker-fedora-a05-hq.webp.asset.json";
 import p01 from "../assets/maker-fedora-p01.jpg.asset.json";
 import p02 from "../assets/maker-fedora-p02.jpg.asset.json";
 import p03 from "../assets/maker-fedora-p03.jpg.asset.json";
@@ -20,8 +20,8 @@ type Tab = "art" | "proofs" | "info";
 
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 
-// Turns "28th September 2026" into a comparable number so rows order oldest owned first.
-function ownedKey(since: string): number {
+// Turns "28th September 2026" into a comparable number for ownership sorting.
+export function ownedKey(since: string): number {
   const parts = since.match(/(\d{1,2})(?:st|nd|rd|th)?\s+([A-Za-z]+)\s+(\d{4})/);
   if (!parts) return Number.MAX_SAFE_INTEGER;
   const day = Number(parts[1] ?? "0");
@@ -69,12 +69,12 @@ export const ITEM_TEMPLATE = {
           { user: "EldestClient565", handle: "@eldestclient565", status: "SEMI AND DEMAND", uaid: "1365666600", since: "12th April 2026", out: false },
           { user: "ephyte", handle: "@ephyte", status: "DEMAND ONLY", uaid: "1365666599", since: "7th April 2026", out: true },
           { user: "1clone09", handle: "@clone2475", status: "DEMAND ONLY", uaid: "1527061056", since: "7th August 2025", out: true },
+          { user: "FiveBarred", handle: "@fivebarred", status: "DEMAND ONLY", uaid: "1527060978", since: "31st June 2026", out: false },
         ],
       },
       {
         title: "Not for trade",
         owners: [
-          { user: "FiveBarred", handle: "@fivebarred", status: "DEMAND ONLY", uaid: "1527060978", since: "31st June 2026", out: false },
           { user: "xJaytoz", handle: "@jqytoz", status: "DEMAND ONLY", uaid: "1365666633", since: "3rd May 2026", out: false },
         ],
       },
@@ -345,7 +345,7 @@ export function ArchiveTabs() {
                     <thead><tr><th scope="col">User</th><th scope="col">Trade Status / Overpay</th><th scope="col">UAID</th><th scope="col">Owned Since</th></tr></thead>
                     <tbody>
                       {[...group.owners]
-                        .sort((a, b) => ownedKey(a.since) - ownedKey(b.since))
+                        .sort((a, b) => ownedKey(b.since) - ownedKey(a.since))
                         .map((owner) => (
                         <tr key={`${owner.user}-${owner.uaid}`}>
                           <td><strong>{owner.user}</strong><span className="owner-handle">{owner.handle}</span></td>

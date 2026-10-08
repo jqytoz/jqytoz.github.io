@@ -11,4 +11,8 @@
 - [x] Restyle proof entries with prominent overpay and trade detail panels
 - [x] Add supplied circulation list, FT statuses, ownership dates, and credits to Info Vault
 - [x] Correct Info Vault last-updated date to 7th October 2026
-- [x] Order Info Vault rows earliest owned to latest
+- [x] Order Info Vault rows latest owned to earliest
+- [x] Move FiveBarred to For trade; retain only xJaytoz in Not for trade
+- [x] Sharpen and enlarge supplied gallery artwork; true HD requires original individual images
+- [x] Add entrance loading screen
+- [x] Reveal archive entries as they scroll into view
