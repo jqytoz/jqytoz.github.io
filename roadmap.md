@@ -1,5 +1,9 @@
 # Roadmap
 
+- [ ] Rename the ownership tab to maker fedora owners
+- [ ] Add Info Vault subgroup with sourced history and both recolours
+- [ ] Verify new subgroup and existing ownership list
+
 - [x] Replace purple dossier accents with fedora green
 - [x] Replace all five gallery images with supplied higher-quality photos
 

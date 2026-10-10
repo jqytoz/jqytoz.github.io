@@ -48,7 +48,7 @@ export function PageEntrance({ name, mark, image, children }: { name: string; ma
       });
     }, { threshold: 0.06, rootMargin: "0px 0px -24px 0px" });
     const scan = () => {
-      element.querySelectorAll(".archive-heading, .art-entry, .proof-card, .circulation-heading, .circulation-stats, .circulation-group, .circulation-note").forEach(target => {
+      element.querySelectorAll(".archive-heading, .art-entry, .proof-card, .circulation-heading, .circulation-stats, .circulation-group, .circulation-note, .history-heading, .history-entry").forEach(target => {
         if (seen.has(target)) return;
         seen.add(target);
         if (target.getBoundingClientRect().top < window.innerHeight - 24) return;

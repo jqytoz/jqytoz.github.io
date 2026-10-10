@@ -211,9 +211,26 @@
 .archive-section { padding: 58px clamp(22px, 3.2vw, 54px) 70px; }
 .archive-heading { display: flex; align-items: end; justify-content: space-between; border-bottom: 1px solid var(--color-border); }
 .archive-heading h2 { margin: 10px 0 -3px; font-family: var(--font-display); font-weight: 400; font-size: 38px; }
-.archive-tabs { display: flex; }
+.archive-tabs { display: flex; flex-wrap: wrap; }
 .archive-tab { border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--color-muted-foreground); padding: 14px 26px; cursor: pointer; font-size: 11px; }
 .archive-tab.active { border-color: var(--color-accent); background: color-mix(in oklch, var(--color-primary) 11%, transparent); color: var(--color-foreground); }
+.archive-tabs .archive-tab { height: auto; border-radius: 0; box-shadow: none; font-weight: 400; }
+.history-vault { padding-top: 32px; }
+.history-heading h3 { margin: 0 0 12px; font-family: var(--font-display); font-size: 28px; font-weight: 400; }
+.history-heading p { margin: 0; color: var(--color-muted-foreground); font-size: 12px; line-height: 1.7; }
+.history-entry { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 32px; padding: 34px 0; border-bottom: 1px solid var(--color-border); }
+.history-entry img { width: 190px; height: 190px; object-fit: contain; }
+.history-entry h4 { margin: 9px 0 14px; font-family: var(--font-display); font-size: 26px; font-weight: 400; overflow-wrap: anywhere; }
+.history-entry p { margin: 0 0 18px; font-size: 12px; line-height: 1.8; color: var(--color-muted-foreground); max-width: 760px; }
+.history-entry dl { display: flex; flex-wrap: wrap; gap: 18px 32px; margin: 20px 0; }
+.history-entry dt { font-family: var(--font-mono); font-size: 8px; color: var(--color-muted-foreground); }
+.history-entry dd { margin: 6px 0 0; font-size: 12px; }
+.history-source { display: inline-flex; align-items: center; gap: 6px; color: var(--color-accent); font-size: 11px; }
+@media (max-width: 760px) {
+  .history-entry { grid-template-columns: 1fr; gap: 16px; }
+  .history-entry img { width: 160px; height: 160px; }
+  .history-entry h4 { font-size: 24px; }
+}
 
 .art-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 38px 20px; padding-top: 30px; }
 .art-entry { min-width: 0; }
