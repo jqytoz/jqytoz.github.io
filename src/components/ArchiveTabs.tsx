@@ -2,11 +2,11 @@ import { useState } from "react";
 import { ArrowUpRight, BadgeCheck, FileCheck2, ShieldCheck } from "lucide-react";
 
 import itemArt from "../assets/maker-fedora-main.png.asset.json";
-import a01 from "../assets/maker-fedora-a01-hq.webp.asset.json";
-import a02 from "../assets/maker-fedora-a02-hq.webp.asset.json";
-import a03 from "../assets/maker-fedora-a03-hq.webp.asset.json";
-import a04 from "../assets/maker-fedora-a04-hq.webp.asset.json";
-import a05 from "../assets/maker-fedora-a05-hq.webp.asset.json";
+import a01 from "../assets/maker-fedora-a01-original.jpeg.asset.json";
+import a02 from "../assets/maker-fedora-a02-original.jpeg.asset.json";
+import a03 from "../assets/maker-fedora-a03-original.jpeg.asset.json";
+import a04 from "../assets/maker-fedora-a04-original.jpeg.asset.json";
+import a05 from "../assets/maker-fedora-a05-original.png.asset.json";
 import p01 from "../assets/maker-fedora-p01.jpg.asset.json";
 import p02 from "../assets/maker-fedora-p02.jpg.asset.json";
 import p03 from "../assets/maker-fedora-p03.jpg.asset.json";
