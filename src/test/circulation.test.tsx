@@ -6,7 +6,7 @@ import { fireEvent } from "@testing-library/react";
 describe("Circulation ownership rules", () => {
   it("lists latest ownership first", () => {
     render(<ArchiveTabs />);
-    fireEvent.click(screen.getByRole("tab", { name: "Info Vault" }));
+    fireEvent.click(screen.getByRole("tab", { name: "maker fedora owners" }));
     const group = screen.getByRole("region", { name: "For trade" });
     const rows = within(group).getAllByRole("row").slice(1);
     expect(rows.map(row => row.querySelector("strong")?.textContent)).toEqual([
