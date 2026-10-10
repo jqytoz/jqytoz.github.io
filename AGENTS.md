@@ -10,4 +10,5 @@
 <!-- LOVABLE:END -->
 
 - Keep all item-specific copy, statistics, links, and gallery data in `ITEM_TEMPLATE` so the archive can be reused by replacing one object.
+- Keep ownership records and sourced item-history entries in separate archive tabs so provenance data is not mixed with catalog history.
 - Keep loading and viewport-reveal behavior in the browser-only effects of PageEntrance; observe newly mounted tab content and respect reduced motion so every archive view remains accessible.
