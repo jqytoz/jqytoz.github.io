@@ -23,4 +23,14 @@ describe("Circulation ownership rules", () => {
     const group = ITEM_TEMPLATE.vault.groups.find(group => group.title === "Not for trade");
     expect(group?.owners.map(owner => owner.user)).toEqual(["xJaytoz"]);
   });
+
+  it("separates catalog history and both recolours from owners", () => {
+    render(<ArchiveTabs />);
+    fireEvent.click(screen.getByRole("tab", { name: "Info Vault" }));
+    expect(screen.getByRole("heading", { name: "The Maker Fedora", exact: true })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Maker Fedora UK 2014" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Lehigh Valley Maker Fedora 2014" })).toBeInTheDocument();
+    expect(screen.getAllByRole("link", { name: "Roblox Wiki" })).toHaveLength(3);
+    expect(screen.queryByRole("region", { name: "For trade" })).not.toBeInTheDocument();
+  });
 });

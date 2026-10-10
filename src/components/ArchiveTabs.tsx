@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ArrowUpRight, BadgeCheck, FileCheck2, ShieldCheck } from "lucide-react";
 
 import itemArt from "../assets/maker-fedora-main.png.asset.json";
@@ -15,8 +15,10 @@ import p05 from "../assets/maker-fedora-p05.jpg.asset.json";
 import p06 from "../assets/maker-fedora-p06.jpg.asset.json";
 import p07 from "../assets/maker-fedora-p07.jpg.asset.json";
 import p08 from "../assets/maker-fedora-p08.jpg.asset.json";
+import ukFedora from "../assets/maker-fedora-uk-2014.png.asset.json";
+import lehighFedora from "../assets/lehigh-valley-maker-fedora-2014.png.asset.json";
 
-type Tab = "art" | "proofs" | "info";
+type Tab = "art" | "proofs" | "owners" | "info";
 
 const MONTHS = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
 
@@ -87,6 +89,38 @@ export const ITEM_TEMPLATE = {
       },
     ],
   },
+  history: [
+    {
+      title: "The Maker Fedora",
+      label: "THE ORIGINAL · 2013",
+      image: itemArt.url,
+      description: "The original green Maker Fedora was a promotional reward for visitors to Roblox’s booth at the 2013 Bay Area Maker Faire. It later appeared in the catalog for 750 Robux from September 21–23, 2013, and became Limited on May 12, 2022. Its distinctive fedora design was also used for the two regional 2014 recolours below.",
+      created: "May 10, 2013",
+      status: "Limited",
+      catalogId: "115363212",
+      wiki: "https://roblox.fandom.com/wiki/Catalog:The_Maker_Fedora",
+    },
+    {
+      title: "Maker Fedora UK 2014",
+      label: "REGIONAL RECOLOUR · UK",
+      image: ukFedora.url,
+      description: "A regional recolour of The Maker Fedora for Maker Faire UK 2014 in Newcastle. Participants at the Roblox booth received a promotional code, which had to be redeemed before the deadline printed on the promotion card. Unlike the original Maker Fedora, this event reward is not Limited and is off sale.",
+      created: "April 18, 2014",
+      status: "Off sale · Not Limited",
+      catalogId: "153956149",
+      wiki: "https://roblox.fandom.com/wiki/Catalog:Maker_Fedora_UK_2014",
+    },
+    {
+      title: "Lehigh Valley Maker Fedora 2014",
+      label: "REGIONAL RECOLOUR · LEHIGH VALLEY",
+      image: lehighFedora.url,
+      description: "A regional recolour created for the Lehigh Valley Mini Maker Faire 2014 in Pennsylvania. It was given to Roblox-booth participants who redeemed the event’s promotional code before the deadline on their promotion card. It shares the Maker Fedora design, but remains a separate, non-Limited event collectible that is off sale.",
+      created: "April 18, 2014",
+      status: "Off sale · Not Limited",
+      catalogId: "153956237",
+      wiki: "https://roblox.fandom.com/wiki/Catalog:Lehigh_Valley_Maker_Fedora_2014",
+    },
+  ],
   stats: [
     { label: "ROLIMONS VALUE", value: "150K" },
     { label: "LAST VALUE CHANGE", value: "+65K", accent: true },
@@ -219,11 +253,25 @@ export const ITEM_TEMPLATE = {
 const tabs: Array<{ id: Tab; label: string }> = [
   { id: "art", label: "Collection (Art)" },
   { id: "proofs", label: "Proofs (Overpays)" },
+  { id: "owners", label: "maker fedora owners" },
   { id: "info", label: "Info Vault" },
 ];
 
 export function ArchiveTabs() {
   const [activeTab, setActiveTab] = useState<Tab>("art");
+
+  useEffect(() => {
+    const selectLinkedTab = () => {
+      const hash = window.location.hash;
+      if (hash === "#owners" || hash === "#info") {
+        setActiveTab(hash === "#owners" ? "owners" : "info");
+        document.getElementById("archive")?.scrollIntoView();
+      }
+    };
+    selectLinkedTab();
+    window.addEventListener("hashchange", selectLinkedTab);
+    return () => window.removeEventListener("hashchange", selectLinkedTab);
+  }, []);
 
   return (
     <>
@@ -322,7 +370,7 @@ export function ArchiveTabs() {
           </div>
         )}
 
-        {activeTab === "info" && (
+        {activeTab === "owners" && (
           <div className="circulation-vault" role="tabpanel">
             <div className="circulation-heading">
               <ShieldCheck aria-hidden="true" />
@@ -363,6 +411,34 @@ export function ArchiveTabs() {
               <p>{ITEM_TEMPLATE.vault.note}</p>
               <a href={ITEM_TEMPLATE.communityUrl} target="_blank" rel="noreferrer">Community <ArrowUpRight size={15} aria-hidden="true" /></a>
             </div>
+          </div>
+        )}
+        {activeTab === "info" && (
+          <div className="history-vault" role="tabpanel" aria-label="Info Vault">
+            <div className="history-heading">
+              <p className="micro-label">ORIGINS & RECOLOURS</p>
+              <h3>Info Vault</h3>
+              <p>The original Maker Fedora and its two 2014 regional recolours. Read the linked Roblox Wiki articles and catalog entries for more details.</p>
+            </div>
+            {ITEM_TEMPLATE.history.map((entry) => (
+              <article className="history-entry" key={entry.catalogId}>
+                <img src={entry.image} alt={entry.title} loading="lazy" />
+                <div>
+                  <span className="micro-label">{entry.label}</span>
+                  <h4>{entry.title}</h4>
+                  <p>{entry.description}</p>
+                  <dl>
+                    <div><dt>CREATOR</dt><dd>Roblox</dd></div>
+                    <div><dt>CREATED</dt><dd>{entry.created}</dd></div>
+                    <div><dt>STATUS</dt><dd>{entry.status}</dd></div>
+                    <div><dt>CATALOG ID</dt><dd>{entry.catalogId}</dd></div>
+                  </dl>
+                  <a className="history-source" href={entry.wiki} target="_blank" rel="noreferrer">Roblox Wiki <ArrowUpRight size={14} aria-hidden="true" /></a>
+                  {" · "}
+                  <a className="history-source" href={`https://www.roblox.com/catalog/${entry.catalogId}`} target="_blank" rel="noreferrer">Roblox Catalog <ArrowUpRight size={14} aria-hidden="true" /></a>
+                </div>
+              </article>
+            ))}
           </div>
         )}
       </section>
