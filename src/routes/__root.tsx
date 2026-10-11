@@ -12,6 +12,10 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { installModuleImportRecovery } from "../lib/module-import-recovery";
+
+// A stale bundle leaves a blank screen; reload once for the current one.
+installModuleImportRecovery();
 
 function NotFoundComponent() {
   return (
