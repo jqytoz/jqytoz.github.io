@@ -38,7 +38,7 @@ function Index() {
         <nav aria-label="Primary navigation">
           <a href="#archive">Collection</a>
           <a href="#archive">Proofs (Overpays)</a>
-          <a href="#owners">maker fedora owners</a>
+          <a href="#owners">Maker Fedora Owners</a>
           <a href="#info">Info Vault</a>
         </nav>
         <a className="community-button" href={ITEM_TEMPLATE.communityUrl} target="_blank" rel="noreferrer">

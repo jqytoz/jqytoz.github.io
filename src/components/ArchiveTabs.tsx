@@ -253,7 +253,7 @@ export const ITEM_TEMPLATE = {
 const tabs: Array<{ id: Tab; label: string }> = [
   { id: "art", label: "Collection (Art)" },
   { id: "proofs", label: "Proofs (Overpays)" },
-  { id: "owners", label: "maker fedora owners" },
+  { id: "owners", label: "Maker Fedora Owners" },
   { id: "info", label: "Info Vault" },
 ];
 

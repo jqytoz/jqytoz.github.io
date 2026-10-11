@@ -6,7 +6,7 @@ import { fireEvent } from "@testing-library/react";
 describe("Circulation ownership rules", () => {
   it("lists latest ownership first", () => {
     render(<ArchiveTabs />);
-    fireEvent.click(screen.getByRole("tab", { name: "maker fedora owners" }));
+    fireEvent.click(screen.getByRole("tab", { name: "Maker Fedora Owners" }));
     const group = screen.getByRole("region", { name: "For trade" });
     const rows = within(group).getAllByRole("row").slice(1);
     expect(rows.map(row => row.querySelector("strong")?.textContent)).toEqual([
@@ -27,7 +27,7 @@ describe("Circulation ownership rules", () => {
   it("separates catalog history and both recolours from owners", () => {
     render(<ArchiveTabs />);
     fireEvent.click(screen.getByRole("tab", { name: "Info Vault" }));
-    expect(screen.getByRole("heading", { name: "The Maker Fedora", exact: true })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "The Maker Fedora" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Maker Fedora UK 2014" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Lehigh Valley Maker Fedora 2014" })).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: "Roblox Wiki" })).toHaveLength(3);
