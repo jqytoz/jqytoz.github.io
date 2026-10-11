@@ -194,9 +194,9 @@
 .hero h1 { margin: 22px 0 20px; font-family: var(--font-display); font-weight: 400; font-size: clamp(50px, 5.3vw, 78px); line-height: .93; max-width: 750px; }
 .hero h1 em { color: var(--color-accent); font-weight: 400; }
 .hero-description { max-width: 630px; color: var(--color-muted-foreground); line-height: 1.65; font-size: 14px; }
-.stats { display: flex; flex-wrap: wrap; row-gap: 18px; margin: 30px 0 0; padding-top: 20px; border-top: 1px solid var(--color-border); max-width: 690px; }
-.stats div { min-width: 120px; padding-right: 24px; margin-right: 20px; border-right: 1px solid var(--color-border); }
-.stats div:last-child { border: 0; margin: 0; }
+.stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: 6px; row-gap: 18px; margin: 30px 0 0; padding-top: 20px; border-top: 1px solid var(--color-border); max-width: 690px; }
+.stats div { min-width: 0; padding-right: 18px; border-right: 1px solid var(--color-border); }
+.stats div:last-child { border: 0; padding-right: 0; }
 .stats dt, .micro-label { font-family: var(--font-mono); font-size: 8px; color: var(--color-muted-foreground); }
 .stats dd { margin: 7px 0 0; font-family: var(--font-display); font-size: 28px; }
 .stats .accent-value { color: var(--color-accent); }
@@ -325,11 +325,12 @@ footer a { display: flex; gap: 5px; color: var(--color-accent); }
   .hero::before { inset: 43% 0 0; }
   .hero h1 { font-size: 48px; }
   .hero-description { font-size: 12px; }
-  .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 0; margin-top: 24px; }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 0; margin-top: 24px; }
   .stats div { min-width: 0; margin-right: 12px; padding-right: 12px; }
-  .stats div:last-child { grid-column: 1 / -1; }
+  .stats div:last-child { grid-column: 1 / -1; display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin: 0; padding-right: 0; }
   .stats dt { min-height: 22px; }
   .stats dd { font-size: 22px; }
+  .stats div:last-child dt { min-height: 0; }
   .specimen { min-height: 270px; width: 100%; }
   .specimen img { width: min(62%, 250px); }
   .object-code { left: -30px; }
