@@ -1,6 +1,6 @@
 # Roadmap
 
-- [ ] Extract trade images from the imgur album and add trades missing from the Proofs tab
+- [x] Extract trade images from the imgur album and add trades missing from the Proofs tab
 
 - [x] Rename the ownership tab to Maker Fedora Owners
 - [x] Add Info Vault subgroup with sourced history and both recolours
