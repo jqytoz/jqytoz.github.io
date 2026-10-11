@@ -132,6 +132,7 @@ export const ITEM_TEMPLATE = {
     { label: "LAST VALUE CHANGE", value: "+65K", accent: true },
     { label: "LATEST OVERPAY", value: "85K" },
     { label: "AVERAGE OVERPAY", value: "97K" },
+    { label: "TRADES SINCE RAISE", value: "14" },
   ],
   art: [
     {

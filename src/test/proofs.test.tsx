@@ -47,6 +47,11 @@ describe("Trades added from the imgur album", () => {
     expect(new Set(seen).size).toBe(seen.length);
   });
 
+  it("counts every archived trade as trades since the raise", () => {
+    const stat = ITEM_TEMPLATE.stats.find((entry) => entry.label === "TRADES SINCE RAISE");
+    expect(stat?.value).toBe(String(ITEM_TEMPLATE.proofs.length));
+  });
+
   it("keeps the newest receipt marked as the latest overpay", () => {
     const latest = ITEM_TEMPLATE.proofs.filter((proof) => proof.latest);
     expect(latest.map((proof) => proof.code)).toEqual(["P–01"]);
