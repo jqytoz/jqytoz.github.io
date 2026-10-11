@@ -325,8 +325,9 @@ footer a { display: flex; gap: 5px; color: var(--color-accent); }
   .hero::before { inset: 43% 0 0; }
   .hero h1 { font-size: 48px; }
   .hero-description { font-size: 12px; }
-  .stats { margin-top: 24px; }
-  .stats div { min-width: 0; flex: 1; margin-right: 12px; padding-right: 12px; }
+  .stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 0; margin-top: 24px; }
+  .stats div { min-width: 0; margin-right: 12px; padding-right: 12px; }
+  .stats div:last-child { grid-column: 1 / -1; }
   .stats dt { min-height: 22px; }
   .stats dd { font-size: 22px; }
   .specimen { min-height: 270px; width: 100%; }
