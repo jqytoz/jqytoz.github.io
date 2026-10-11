@@ -131,7 +131,7 @@ export const ITEM_TEMPLATE = {
     { label: "ROLIMONS VALUE", value: "150K" },
     { label: "LAST VALUE CHANGE", value: "+65K", accent: true },
     { label: "LATEST OVERPAY", value: "85K" },
-    { label: "AVERAGE OVERPAY", value: "80K" },
+    { label: "AVERAGE OVERPAY", value: "97K" },
   ],
   art: [
     {
