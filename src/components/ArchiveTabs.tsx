@@ -15,6 +15,12 @@ import p05 from "../assets/maker-fedora-p05.jpg.asset.json";
 import p06 from "../assets/maker-fedora-p06.jpg.asset.json";
 import p07 from "../assets/maker-fedora-p07.jpg.asset.json";
 import p08 from "../assets/maker-fedora-p08.jpg.asset.json";
+import p09 from "../assets/maker-fedora-p09.jpg.asset.json";
+import p10 from "../assets/maker-fedora-p10.jpg.asset.json";
+import p11 from "../assets/maker-fedora-p11.jpg.asset.json";
+import p12 from "../assets/maker-fedora-p12.jpg.asset.json";
+import p13 from "../assets/maker-fedora-p13.jpg.asset.json";
+import p14 from "../assets/maker-fedora-p14.jpg.asset.json";
 import ukFedora from "../assets/maker-fedora-uk-2014.png.asset.json";
 import lehighFedora from "../assets/lehigh-valley-maker-fedora-2014.png.asset.json";
 
@@ -247,13 +253,73 @@ export const ITEM_TEMPLATE = {
       date: "4/7/2026",
       image: p08.url,
     },
+    {
+      code: "P–09",
+      title: "Maker vs Chaplin",
+      offer: "150,000 vs 325,000",
+      overpay: "175K",
+      sender: "impalervi",
+      receiver: "l13kklkl",
+      date: "5/26/2026",
+      image: p09.url,
+    },
+    {
+      code: "P–10",
+      title: "Maker vs Where Are the Eggs?",
+      offer: "150,000 vs 315,000",
+      overpay: "165K",
+      sender: "impalerVI",
+      receiver: "pontifexilprofits",
+      date: "5/8/26",
+      image: p10.url,
+    },
+    {
+      code: "P–11",
+      title: "Maker vs Crimson Laser Vision",
+      offer: "223,000 vs 150,000",
+      overpay: "73K",
+      sender: "Proxilic",
+      receiver: "SOVSQUAD",
+      date: "5/1/26",
+      image: p11.url,
+    },
+    {
+      code: "P–12",
+      title: "Maker vs PIGG",
+      offer: "256,000 vs 150,000",
+      overpay: "106K",
+      sender: "kanistrotic",
+      receiver: "zobso",
+      date: "3/4/2026",
+      image: p12.url,
+    },
+    {
+      code: "P–13",
+      title: "Maker vs VPH and Noir Periastron Psi",
+      offer: "230,000 vs 185,000",
+      overpay: "45K",
+      sender: "Irohsin",
+      receiver: "Proxilic",
+      date: "23/04/26",
+      image: p13.url,
+    },
+    {
+      code: "P–14",
+      title: "Maker vs Green Galaxy Gaze",
+      offer: "150,000 vs 201,342",
+      overpay: "100K",
+      sender: "Not shown",
+      receiver: "Not shown",
+      date: "2/20/26",
+      image: p14.url,
+    },
   ],
 };
 
 const tabs: Array<{ id: Tab; label: string }> = [
   { id: "art", label: "Collection (Art)" },
   { id: "proofs", label: "Proofs (Overpays)" },
-  { id: "owners", label: "maker fedora owners" },
+  { id: "owners", label: "Maker Fedora Owners" },
   { id: "info", label: "Info Vault" },
 ];
 
