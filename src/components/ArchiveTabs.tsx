@@ -322,7 +322,7 @@ export const ITEM_TEMPLATE = {
       sender: "bmx_cool",
       receiver: "xJaytoz",
       date: "4/05/24",
-      image: "https://i.imgur.com/WZSCFL4.png",
+      image: p15,
     },
     {
       code: "P–16",
@@ -332,7 +332,7 @@ export const ITEM_TEMPLATE = {
       sender: "mudkip1234567891",
       receiver: "Not shown",
       date: "Circa 2 months ago",
-      image: "https://i.imgur.com/QlVJOWF.png",
+      image: p16,
     },
     {
       code: "P–17",
@@ -342,7 +342,7 @@ export const ITEM_TEMPLATE = {
       sender: "Not shown",
       receiver: "Not shown",
       date: "5/18",
-      image: "https://i.imgur.com/QDzqsyb.jpg",
+      image: p17,
     },
   ],
 };
