@@ -335,7 +335,6 @@ export const ITEM_TEMPLATE = {
       image: "https://i.imgur.com/QlVJOWF.png",
     },
     {
-          {
       code: "P–17",
       title: "Maker vs BTLS",
       offer: "144,050 vs 107,000",
