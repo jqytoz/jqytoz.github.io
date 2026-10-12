@@ -347,7 +347,7 @@ export const ITEM_TEMPLATE = {
   ],
 };
 
-const tabs: Array<{ id: Tab; label: string }> = [
+
 
 
 
