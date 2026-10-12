@@ -21,6 +21,9 @@ import p11 from "../assets/maker-fedora-p11.jpg.asset.json";
 import p12 from "../assets/maker-fedora-p12.jpg.asset.json";
 import p13 from "../assets/maker-fedora-p13.jpg.asset.json";
 import p14 from "../assets/maker-fedora-p14.jpg.asset.json";
+import p15 from "../assets/IMG_1183.png";
+import p16 from "../assets/IMG_1184.png";
+import p17 from "../assets/IMG_1185.png";
 import ukFedora from "../assets/maker-fedora-uk-2014.png.asset.json";
 import lehighFedora from "../assets/lehigh-valley-maker-fedora-2014.png.asset.json";
 
