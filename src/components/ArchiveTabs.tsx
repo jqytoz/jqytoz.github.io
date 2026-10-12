@@ -335,6 +335,7 @@ export const ITEM_TEMPLATE = {
       image: "https://i.imgur.com/QlVJOWF.png",
     },
     {
+          {
       code: "P–17",
       title: "Maker vs BTLS",
       offer: "144,050 vs 107,000",
@@ -344,6 +345,11 @@ export const ITEM_TEMPLATE = {
       date: "5/18",
       image: "https://i.imgur.com/QDzqsyb.jpg",
     },
+  ],
+};
+
+const tabs: Array<{ id: Tab; label: string }> = [
+
 
 
 const tabs: Array<{ id: Tab; label: string }> = [
