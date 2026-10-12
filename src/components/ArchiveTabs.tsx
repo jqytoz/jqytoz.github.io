@@ -131,8 +131,8 @@ export const ITEM_TEMPLATE = {
     { label: "ROLIMONS VALUE", value: "150K" },
     { label: "LAST VALUE CHANGE", value: "+65K", accent: true },
     { label: "LATEST OVERPAY", value: "85K" },
-    { label: "AVERAGE OVERPAY", value: "97K" },
-    { label: "TRADES SINCE RAISE", value: "14" },
+    { label: "AVERAGE OVERPAY", value: "87k" },
+    { label: "TRADES SINCE RAISE", value: "17" },
   ],
   art: [
     {
@@ -173,7 +173,7 @@ export const ITEM_TEMPLATE = {
     },
   ],
   proofs: [
-    {
+    { 
       code: "P–01",
       title: "Maker vs DCJ+",
       offer: "234,846 vs 150,000",
@@ -314,8 +314,37 @@ export const ITEM_TEMPLATE = {
       date: "2/20/26",
       image: p14.url,
     },
-  ],
-};
+    {
+      code: "P–15",
+      title: "Maker vs Blizaria",
+      offer: "270,558 vs 69,087",
+      overpay: "55K",
+      sender: "bmx_cool",
+      receiver: "xJaytoz",
+      date: "4/05/24",
+      image: "https://i.imgur.com/WZSCFL4.png",
+    },
+    {
+      code: "P–16",
+      title: "Maker vs Snowflake Eyes & GQOTN",
+      offer: "228,000 vs 150,000",
+      overpay: "90K",
+      sender: "mudkip1234567891",
+      receiver: "Not shown",
+      date: "Circa 2 months ago",
+      image: "https://i.imgur.com/QlVJOWF.png",
+    },
+    {
+      code: "P–17",
+      title: "Maker vs BTLS",
+      offer: "144,050 vs 107,000",
+      overpay: "37K",
+      sender: "Not shown",
+      receiver: "Not shown",
+      date: "5/18",
+      image: "https://i.imgur.com/QDzqsyb.jpg",
+    },
+
 
 const tabs: Array<{ id: Tab; label: string }> = [
   { id: "art", label: "Collection (Art)" },
